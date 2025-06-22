@@ -92,7 +92,7 @@ floater.addEventListener("mouseenter", () => {
 		rotate: 0,
 		duration: 0.3,
 		ease: "power2.out",
-		cursor: 'pointer'
+		cursor: "pointer",
 	});
 });
 
@@ -101,12 +101,9 @@ floater.addEventListener("mouseleave", () => {
 		rotate: 30,
 		duration: 0.3,
 		ease: "power2.inOut",
-		onComplete: () => floatAnim.resume(), 
+		onComplete: () => floatAnim.resume(),
 	});
 });
-
-
-
 
 const button = document.querySelector(".button");
 const line = button.querySelector(".line");
@@ -116,7 +113,7 @@ const tl = gsap.timeline({ paused: true });
 
 tl.to(line, {
 	width: 0,
-	translateX: '-30px',
+	translateX: "-30px",
 	duration: 0.3,
 	ease: "power2.out",
 }).to(
