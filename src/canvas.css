@@ -1,7 +1,7 @@
 .canvas-wrapper {
 	position: relative;
-	width: 1200px; /* Match canvas attribute */
-	height: 900px; /* Match canvas attribute */
+	width: 1200px;
+	height: 900px;
 	overflow: hidden;
 	background: #000;
 }
@@ -18,7 +18,13 @@ canvas {
 	position: absolute;
 	top: 0;
 	left: 0;
-	/* Remove width/height here to use attribute size */
 	z-index: 1;
-	pointer-events: none;
+	pointer-events: all;
+}
+
+.star-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
