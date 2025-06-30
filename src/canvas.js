@@ -198,21 +198,22 @@ const stars = [];
 const starImg = new Image();
 starImg.src = "/public/star.png";
 
+const rectStarsCanvas = { x: 700, y: 300, width: 450, height: 400 };
+
 const drawStarsCanvas=()=>{
-	const rect = { x: 700, y: 300, width: 450, height: 400 };
 	ctx.save();
 	const gradient = ctx.createLinearGradient(
-		rect.x,
-		rect.y,
-		rect.x + rect.width,
-		rect.y
+		rectStarsCanvas.x,
+		rectStarsCanvas.y,
+		rectStarsCanvas.x + rectStarsCanvas.width,
+		rectStarsCanvas.y
 	);
 	gradient.addColorStop(0, "rgba(101, 197, 235, 1)");
 	gradient.addColorStop(0.5, "rgba(43, 147, 166, 1)");
 	gradient.addColorStop(1, "rgba(21, 71, 115, 1)");
 	ctx.fillStyle = gradient;
 	ctx.lineWidth = 4;
-	ctx.fillRect(rect.x, rect.y, rect.width, rect.height);
+	ctx.fillRect(rectStarsCanvas.x, rectStarsCanvas.y, rectStarsCanvas.width, rectStarsCanvas.height);
 	ctx.restore();
 }
 drawStarsCanvas();
@@ -230,10 +231,10 @@ canvas.addEventListener("click", (e) => {
 	const y = e.clientY - rectCanvas.top;
 
 	if (
-		x >= rectCanvas.x &&
-		x <= rectCanvas.x + rectCanvas.width &&
-		y >= rectCanvas.y &&
-		y <= rectCanvas.y + rectCanvas.height
+		x >= rectStarsCanvas.x &&
+		x <= rectStarsCanvas.x + rectStarsCanvas.width &&
+		y >= rectStarsCanvas.y &&
+		y <= rectStarsCanvas.y + rectStarsCanvas.height
 	) {
 		stars.push({ x, y });
 		drawStars();
