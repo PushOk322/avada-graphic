@@ -6,13 +6,10 @@ canvas.height = window.innerHeight;
 
 document.body.style.cursor = 'none';
 
-ctx.fillStyle = "blue";
-ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-
-const particlesQuantity = 100
+const particlesQuantity = 50
 const maxDistanceForConnection = 100;
-const speed = 5;
+const speed = 15;
 
 
 function drawParticle(x, y, isCursor = false) {
